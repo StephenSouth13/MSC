@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/Content/tuln/backend/img/logo_ueh_new.png">
+    <title>Phan Huỳnh Anh</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #005f69;
+            font-weight: bold;
+        }
+        h2 {
+            color: #007bff;
+            font-weight: bold;
+            margin-top: 20px;
+            border-bottom: 2px solid #005f69;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        li {
+            margin: 10px 0;
+            font-weight: normal;
+        }
+        hr {
+            border: 1px solid #005f69;
+            margin: 20px 0;
+        }
+        .signature {
+            margin-top: 50px;
+            text-align: right;
+        }
+        .footer {
+            text-align: center;
+            background-color: #005f69;
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+            border-radius: 0 0 10px 10px;
+            position: relative;
+        }
+        .footer img {
+            position: absolute;
+            left: 20px;
+            bottom: 10px;
+            width: 50px;
+            height: auto;
+        }
+        .avatar {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid #007bff;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .icon {
+            margin-right: 5px;
+            color: #007bff;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+        .dark-mode .container {
+            background: #444;
+            color: #f4f4f4;
+        }
+        button {
+            margin: 0 5px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005f69;
+        }
+        .language-toggle {
+            background-color: #005f69;
+        }
+        .language-toggle:hover {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        <a href="PHA.html"> <button class="language-toggle" onclick="toggleLanguage()">Translate VietNamese</button></a>
+    </div>
+    
+    <div class="container">
+        <h1>CV - Phan Huỳnh Anh</h1>
+        <img src="PHAvuong.jpg" alt="Avatar" class="avatar">
+
+        <h2>Personal Information</h2>
+        <ul>
+            <li>Full Name: Phan Huỳnh Anh</li>
+            <li>Date of Birth: 15/04/1984</li>
+            <li>Gender: Male</li>
+            <li>Degree: Doctorate (Year Attained: 2019)</li>
+            <div class="contact-info">
+                <li>Phone: <a href="tel:0848841504">0848841504</a></li>
+                <li>Email: <a href="mailto:anhph@ueh.edu.vn">anhph@ueh.edu.vn</a></li>
+            </div>
+        </ul>
+        <hr>
+
+        <h2>Work Organization</h2>
+        <ul>
+            <li>Lecturer at UEH University</li>
+            <li>National Startup Lecturer (VCCI)</li>
+            <li>Founder of Vietnam Practical Arts Institute (Smentor)</li>
+            <li>Founder of VSM – Vietnam Student Marathon</li>
+            <li>Founder/CEO of FFVN Fund</li>
+        </ul>
+        <hr>
+
+        <h2>Qualifications and Expertise</h2>
+        <ul>
+            <li>Bachelor's in Information Technology</li>
+            <li>Bachelor's in Economics</li>
+            <li>Master's in Economics</li>
+            <li>Doctorate in Economics</li>
+            <li>Microsoft Certified Specialist (MCSE)</li>
+            <li>Cisco Certified Specialist (CCNP)</li>
+            <li>National Startup Lecturer (VCCI)</li>
+        </ul>
+        <hr>
+
+        <h2>Work Experience</h2>
+        <ul>
+            <li>2007-2008: IT Staff, Sacombank</li>
+            <li>2008-2012: Head of IT and Online Business Department, Vietmark</li>
+            <li>2013-2017: Marketing Director, Exotic Vietnam</li>
+            <li>2017-2019: CEO, Smentor</li>
+            <li>2017-2020: Training & Marketing Director, Happyland Vietnam</li>
+            <li>2019-Present: Chairman of the Board, Smentor</li>
+            <li>2019-2022: Director, Vietnam Practical Arts Institute</li>
+            <li>2017-Present: Lecturer at Southern National Startup Council (VCCI)</li>
+            <li>2020-Present: Lecturer at UEH University</li>
+            <li>2022-Present: Founder of Vietnam Student Marathon</li>
+            <li>2023-Present: Founder/CEO of FFVN Fund</li>
+        </ul>
+        <hr>
+
+        <h2>Subjects Taught</h2>
+        <ul>
+            <li>Soft Skills for Students (2017 - Present)</li>
+            <li>Startup Management (2017 - Present)</li>
+            <li>Startup Ecosystem (2017 - Present)</li>
+            <li>Business Communication (2017 - Present)</li>
+            <li>Digital Startup - Digital Economy (2020 - Present)</li>
+            <li>Application of 4.0 Technology in Startups (2020 - Present)</li>
+            <li>Project Evaluation (2020 - Present)</li>
+            <li>Project Management (2020 - Present)</li>
+        </ul>
+        <hr>
+
+        <h2>Awards</h2>
+        <ul>
+            <li>Certificate of Merit from the Central Vietnam Record Association for contributions (2019)</li>
+            <li>Certificate of Merit from the Vietnam Intellectual Property Office for creative content and intellectual contributions (2019)</li>
+            <li>Certificate of Merit from the National Startup Council (VCCI) for contributions in startup education (2019 – 2021)</li>
+        </ul>
+        <hr>
+
+        <div class="signature">
+            <p>Ho Chi Minh City, December 20, 2023</p>
+            <p>Signature:</p>
+            <p><strong>PHAN HUỲNH ANH</strong></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <img src="msc.EDU.VN.png" alt="Organization Logo">
+        <p>© 2025 MSC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function toggleLanguage() {
+            // Chức năng chuyển ngôn ngữ sẽ cần thực hiện thay đổi nội dung văn bản
+            alert("Chuyển đổi thành công");
+            location.reload(); // Reload page to switch language
+        }
+    </script>
+</body>
+</html>

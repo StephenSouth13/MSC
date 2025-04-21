@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Phan Huỳnh Anh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/Content/tuln/backend/img/logo_ueh_new.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            text-align: center;
+            color: #005f69;
+            font-weight: bold;
+        }
+        h2 {
+            color: #007bff;
+            font-weight: bold;
+            margin-top: 20px;
+            border-bottom: 2px solid #005f69;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-left: 0;
+        }
+        li {
+            margin: 10px 0;
+            font-weight: normal;
+            position: relative;
+            padding-left: 15px;
+        }
+        li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #007bff;
+            font-weight: bold;
+        }
+        hr {
+            border: 1px solid #005f69;
+            margin: 20px 0;
+        }
+        .avatar {
+            display: block;
+            margin: 0 auto 10px auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 3px solid #007bff;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+        .dark-mode .container {
+            background: #444;
+            color: #f4f4f4;
+        }
+        button {
+            margin: 0 5px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #005f69;
+        }
+        .language-toggle {
+            background-color: #005f69;
+        }
+        .language-toggle:hover {
+            background-color: #007bff;
+        }
+        footer.footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #005f69;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 0 0 10px 10px;
+        }
+        .footer img.logo {
+            width: 50px;
+            height: auto;
+        }
+        @media (max-width: 600px) {
+            .contact-info {
+                flex-direction: column;
+            }
+            .footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+        .qr-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .qr-container img {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+        }
+        .info-icon {
+            color: #007bff;
+            margin-right: 8px;
+        }
+        footer.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #005f69;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+}
+
+.footer .logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.footer-text {
+    font-size: 14px;
+    margin: 0;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <button onclick="toggleDarkMode()">Chuyển chế độ tối</button>
+        <a href="PHA_us.html"><button class="language-toggle">English</button></a>
+    </div>
+
+    <div class="container">
+        <h1>CV - Phan Huỳnh Anh</h1>
+        <img src="PHAvuong.jpg" alt="Avatar" class="avatar">
+
+        <h2>Thông tin cá nhân</h2>
+        <ul>
+            <li><i class="fas fa-user info-icon"></i>Họ và tên: Phan Huỳnh Anh</li>
+            <li><i class="fas fa-calendar info-icon"></i>Năm sinh: 15/04/1984</li>
+            <li><i class="fas fa-mars info-icon"></i>Giới tính: Nam</li>
+            <li><i class="fas fa-graduation-cap info-icon"></i>Học vị: Tiến sĩ (2019)</li>
+            <div class="contact-info">
+                <li><i class="fas fa-phone info-icon"></i>Điện thoại: <a href="tel:0848841504">0848841504</a></li>
+                <li><i class="fas fa-envelope info-icon"></i>Email: <a href="mailto:anhph@ueh.edu.vn">anhph@ueh.edu.vn</a></li>
+            </div>
+        </ul>
+        <hr>
+
+        <h2>Tổ chức làm việc</h2>
+        <ul>
+            <li>Giảng viên Đại học UEH</li>
+            <li>Giảng viên khởi nghiệp quốc gia (VCCI)</li>
+            <li>Founder Viện Việt Nam Bách Nghệ Thực Hành (Smentor)</li>
+            <li>Founder VSM – Vietnam Student Marathon</li>
+            <li>Founder/CEO Quỹ FFVN</li>
+        </ul>
+        <hr>
+
+        <h2>Bằng cấp và chuyên môn</h2>
+        <ul>
+            <li>Cử nhân công nghệ thông tin</li>
+            <li>Cử nhân kinh tế</li>
+            <li>Thạc sĩ kinh tế</li>
+            <li>Tiến sĩ kinh tế</li>
+            <li>Chuyên viên Microsoft (MCSE)</li>
+            <li>Chuyên viên Cisco (CCNP)</li>
+            <li>Giảng viên khởi nghiệp quốc gia (VCCI)</li>
+        </ul>
+        <hr>
+
+        <h2>Quá trình công tác</h2>
+        <ul>
+            <li>2007-2008: Nhân viên IT, Ngân hàng Sacombank</li>
+            <li>2008-2012: Trưởng phòng IT và kinh doanh online, Công ty Vietmark</li>
+            <li>2013-2017: Giám đốc marketing, Công ty Exotic Việt Nam</li>
+            <li>2017-2019: Giám đốc điều hành, Công ty Smentor</li>
+            <li>2017-2020: Giám đốc đào tạo & marketing, Happyland Vietnam</li>
+            <li>2019-nay: Chủ tịch HĐQT, Công ty Smentor</li>
+            <li>2019-2022: Viện Trưởng, Viện Nghiên Cứu Và Ứng Dụng Việt Nam Bách Nghệ Thực Hành</li>
+            <li>2017-nay: Giảng viên Hội Đồng Khởi Nghiệp Quốc Gia Phía Nam (VCCI)</li>
+            <li>2020-nay: Giảng viên Đại Học UEH</li>
+            <li>2022-nay: Founder Vietnam Student Marathon</li>
+            <li>2023-nay: Founder/CEO Quỹ FFVN</li>
+        </ul>
+        <hr>
+
+        <h2>Bộ môn phụ trách giảng dạy</h2>
+        <ul>
+            <li>Kỹ năng mềm dành cho sinh viên</li>
+            <li>Quản trị khởi nghiệp</li>
+            <li>Hệ sinh thái khởi nghiệp</li>
+            <li>Giao tiếp kinh doanh</li>
+            <li>Khởi nghiệp số - Kinh tế số</li>
+            <li>Ứng dụng công nghệ 4.0 trong khởi nghiệp</li>
+            <li>Thẩm định dự án</li>
+            <li>Quản lý dự án</li>
+        </ul>
+        <hr>
+
+        <h2>Giải thưởng</h2>
+        <ul>
+            <li>Bằng khen của Trung Ương hội kỷ lục gia Việt Nam (2019)</li>
+            <li>Bằng khen của Cục Sở Hữu Trí Tuệ Việt Nam (2019)</li>
+            <li>Giấy khen của HĐ khởi nghiệp Quốc Gia (2019 – 2021)</li>
+        </ul>
+
+        <div class="qr-container">
+            <img src="msc.EDU.VN.png" alt="QR Code">
+        </div>
+    </div>
+
+    <footer class="footer">
+        <img src="msc.EDU.VN.png" alt="Logo Tổ Chức" class="logo">
+        <p class="footer-text">© 2025 MSC. All rights reserved.</p>
+      </footer>
+      
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>

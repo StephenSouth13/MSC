@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hồ sơ thành viên MSC</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #f0f4ff, #d6e4ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1d4ed8;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      letter-spacing: 1px;
+    }
+
+    .pyramid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .pyramid-level {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .pyramid-level::after {
+      content: '';
+      position: absolute;
+      top: -2rem;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, #60a5fa, #a78bfa, #f472b6);
+      opacity: 0.6;
+    }
+
+    .pyramid-level:first-child::after {
+      display: none;
+    }
+
+    .member {
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+      max-width: 130px;
+    }
+
+    .member:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .member img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #1d4ed8;
+      margin-bottom: 0.5rem;
+    }
+
+    .member p {
+      margin: 0;
+      font-weight: bold;
+      font-size: 0.95rem;
+      color: #1e293b;
+    }
+
+    @media (max-width: 768px) {
+      .pyramid-level {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Sơ đồ tổ chức MSC</h1>
+  <div class="pyramid">
+    
+    <!-- Cấp 1: 2 người -->
+    <div class="pyramid-level">
+      <a href="PHA.html" class="member" target="_blank">
+        <img src="PHAvuong.jpg" alt="Phan Huỳnh Anh">
+        <p>Chủ tịch</p>
+      </a>
+      <a href="long.html" class="member" target="_blank">
+        <img src="Minh.png" alt="Đoàn Đức Minh">
+        <p>Phó Chủ tịch</p>
+      </a>
+    </div>
+
+    <!-- Cấp 2: 4 người -->
+    <div class="pyramid-level">
+      <a href="member1.html" class="member" target="_blank">
+        <img src="member1.jpg" alt="Thành viên 1">
+        <p>Giám đốc học thuật</p>
+      </a>
+      <a href="member2.html" class="member" target="_blank">
+        <img src="member2.jpg" alt="Thành viên 2">
+        <p>Giám đốc vận hành</p>
+      </a>
+      <a href="member3.html" class="member" target="_blank">
+        <img src="member3.jpg" alt="Thành viên 3">
+        <p>Trưởng dự án</p>
+      </a>
+      <a href="member4.html" class="member" target="_blank">
+        <img src="member4.jpg" alt="Thành viên 4">
+        <p>Truyền thông</p>
+      </a>
+    </div>
+
+    <!-- Cấp 3: 8 người -->
+    <div class="pyramid-level">
+      <a href="member5.html" class="member" target="_blank">
+        <img src="member5.jpg" alt="Thành viên 5">
+        <p>Thành viên</p>
+      </a>
+      <a href="member6.html" class="member" target="_blank">
+        <img src="member6.jpg" alt="Thành viên 6">
+        <p>Thành viên</p>
+      </a>
+      <a href="member7.html" class="member" target="_blank">
+        <img src="member7.jpg" alt="Thành viên 7">
+        <p>Thành viên</p>
+      </a>
+      <a href="member8.html" class="member" target="_blank">
+        <img src="member8.jpg" alt="Thành viên 8">
+        <p>Thành viên</p>
+      </a>
+      <a href="member9.html" class="member" target="_blank">
+        <img src="member9.jpg" alt="Thành viên 9">
+        <p>Thành viên</p>
+      </a>
+      <a href="member10.html" class="member" target="_blank">
+        <img src="member10.jpg" alt="Thành viên 10">
+        <p>Thành viên</p>
+      </a>
+      <a href="member11.html" class="member" target="_blank">
+        <img src="member11.jpg" alt="Thành viên 11">
+        <p>Thành viên</p>
+      </a>
+      <a href="member12.html" class="member" target="_blank">
+        <img src="member12.jpg" alt="Thành viên 12">
+        <p>Thành viên</p>
+      </a>
+    </div>
+
+  </div>
+</body>
+</html>

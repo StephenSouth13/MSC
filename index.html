@@ -1,36 +1,114 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MSC - Mentoring For Success</title>
+  <title>MSC - Mekong Center Skills</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- NAVIGATION -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="msc.EDU.VN.png" alt="MSC Logo" />
-    </div>
-  
-    <!-- Hamburger icon -->
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  
-    <nav>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#gioi-thieu">Giới thiệu</a></li>
-        <li><a href="#chuyen-mon">Chuyên môn</a></li>
-        <li><a href="#du-an">Dự án</a></li>
-        <li><a href="#BGH">Ban Giảng Huấn</a></li>
-        <li><a href="#LH">Liên hệ</a></li>
-      </ul>
-    </nav>
-  
+<header class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="msc.EDU.VN.png" alt="MSC Logo" />
+  </div>
+
+  <!-- Hamburger icon -->
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+  <!-- Navigation -->
+  <nav id="nav-menu">
+    <ul class="nav-links">
+      <li><a href="#gioi-thieu">Giới thiệu</a></li>
+      <li><a href="#chuyen-mon">Chuyên môn</a></li>
+      <li><a href="#du-an">Dự án</a></li>
+      
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Ban Giảng Huấn &#x25BE;</a>
+        <ul class="dropdown-menu">
+          <li><a href="#ban-co-van-truc-tiep">Ban Cố Vấn Trực Tiếp</a></li>
+          <li><a href="#ban-chu-nhiem">Ban Chủ Nhiệm</a></li>
+      
+        </ul>
+      </li>
+      
+      
+      <li><a href="#LH">Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <!-- Profile Button -->
+  <a href="profile.html" target="_blank">
     <button class="profile-btn">PROFILE</button>
-  </header>
+  </a>
+  
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    // Toggle mobile menu
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked (including dropdown items)
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        dropdowns.forEach(d => d.classList.remove('open')); // Close dropdown too
+      });
+    });
+
+    // Dropdown toggle
+    dropdowns.forEach(drop => {
+      const toggle = drop.querySelector('.dropdown-toggle');
+
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Prevent triggering the document click
+
+        const isOpen = drop.classList.contains('open');
+        dropdowns.forEach(d => d.classList.remove('open'));
+        if (!isOpen) drop.classList.add('open');
+      });
+    });
+
+    // Close dropdown if clicked outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.dropdown')) {
+        dropdowns.forEach(drop => drop.classList.remove('open'));
+      }
+    });
+  });
+</script>
+
+
   
   
+  <!-- icon-->
+  <div class="floating-contact">
+    <a href="https://www.facebook.com/hoichogiaoducvietnam/" class="contact-btn fb-btn" target="_blank">
+      <img src="fb.png" alt="Facebook">
+    </a>
+    <a href="https://www.youtube.com/@hoichogiaoducvietnam" class="contact-btn call-btn">
+      <img src="ytb.png" alt="Youtube">
+    </a>
+    <a href="https://www.tiktok.com/@hoichogiaoducvietnam" class="contact-btn zalo-btn" target="_blank">
+      <img src="tt.png" alt="TikTok">
+    </a>
+    <a href="https://www.facebook.com/hoichogiaoducvietnam/" class="contact-btn fb-btn" target="_blank">
+      <img src="zalo.png" alt="Zalo">
+    </a>
+  </div>
 
   <!-- HERO SECTION -->
   <section id="gioi-thieu" class="hero">
@@ -109,7 +187,7 @@
       <div class="project-card">
         <div class="project-img"></div>
         <div class="project-content">
-          <h3>Workshop Kỹ năng</h3>
+          <h3>Bách Niên Trường Thọ</h3>
           <ul>
             <li>Nội dung:</li>
             <li>Thời gian:</li>
@@ -122,7 +200,7 @@
       <div class="project-card">
         <div class="project-img"></div>
         <div class="project-content">
-          <h3>Mentor Coaching</h3>
+          <h3>Đôi Dép</h3>
           <ul>
             <li>Nội dung:</li>
             <li>Thời gian:</li>
@@ -135,7 +213,7 @@
       <div class="project-card">
         <div class="project-img"></div>
         <div class="project-content">
-          <h3>Talkshow Doanh nhân</h3>
+          <h3>Smentor Zone</h3>
           <ul>
             <li>Nội dung:</li>
             <li>Thời gian:</li>
@@ -151,72 +229,213 @@
   
 <!-- PHẦN SECTION THỨ HAI GIỐNG TRÊN -->  
   <!-- ADVISOR SECTION -->
-  <section class="advisor-section">
-    <div class="advisor-card">
-        <a href="PHA.html" class="advisor-link" target="_blank">
-          <img src="PHAvuong.jpg" alt="Phan Huỳnh Anh" class="advisor-img">
-          <div class="advisor-content">
-            <p class="advisor-title">Doctor</p>
-            <h3 class="advisor-name">PHAN HUỲNH ANH</h3>
-            <ul>
-              <li>Over 10 years of experience in working and training human resources.</li>
-              <li>Expert in training successor human resources for organizations.</li>
-              <li>Lecturer at VCCI / Startup.</li>
-              <li><a href="https://khoinghiepphianam.com" target="_blank">khoinghiepphianam.com</a></li>
-            </ul>
-          </div>
-        </a>
+  
+  <section id = "ban-co-van-truc-tiep" class="advisor-section">
+    <!-- Tiêu đề & mô tả -->
+    <div class="advisor-header">
+      <h2>Ban Cố Vấn <span>Trực Tiếp</span></h2>
+      <div class="rotating-text-container">
+        <p id="rotating-text" class="rotating-text"></p>
       </div>
-      
+    </div>
+    <script>
+      const lines = [
+        "Đội ngũ chuyên gia đồng hành và hỗ trợ trực tiếp cho sự phát triển của bạn.",
+        "Với kinh nghiệm dày dặn và kiến thức thực tiễn sâu rộng,",
+        "Các cố vấn sẽ giúp bạn định hình tư duy chiến lược hiệu quả.",
+        "Chúng tôi không chỉ hướng dẫn, mà còn đồng hành lâu dài.",
+        "Cùng nhau kiến tạo nên giá trị bền vững cho tương lai."
+      ];
+    
+      let index = 0;
+      const rotatingText = document.getElementById("rotating-text");
+    
+      function showNextLine() {
+        rotatingText.textContent = lines[index];
+        rotatingText.classList.remove("fade");
+        void rotatingText.offsetWidth; // force reflow
+        rotatingText.classList.add("fade");
+    
+        index = (index + 1) % lines.length;
+      }
+    
+      showNextLine();
+      setInterval(showNextLine, 4000); // mỗi 4 giây đổi 1 dòng
+    </script>
+    
+  
+    <!-- Cố vấn 1 -->
+    <div class="advisor-card">
+      <a href="PHA.html" target="_blank">
+        <img src="PHAvuong.jpg" alt="Phan Huỳnh Anh" class="advisor-img" />
+        <p class="advisor-title">Doctor of Marketing</p>
+        <h3 class="advisor-name">PHAN HUỲNH ANH</h3>
+        <ul class="list-none space-y-2 text-gray-600 text-sm">
+          <li>✅ Over 10 years of experience in human resources.</li>
+          <li>🎯 Expert in training successor leaders.</li>
+          <li>📚 Lecturer at VCCI / Startup.</li>
+          <li>🔗 <a href="https://khoinghiepphianam.com" target="_blank" class="text-blue-500 hover:underline">khoinghiepphianam.com</a></li>
+        </ul>
+      </a>
     </div>
   
+    <!-- Cố vấn 2 -->
     <div class="advisor-card">
-      <img src="Minh.png" alt="Đoàn Đức Minh" class="advisor-img">
-      <div class="advisor-content">
-        <p class="advisor-title">PhD Student</p>
+      <a href="https://ifa.edu.vn/giang-vien-doan-duc-minh/" target="_blank">
+        <img src="Minh.png" alt="Đoàn Đức Minh" class="advisor-img" />
+        <p class="advisor-title">Doctor of Business Administration</p>
         <h3 class="advisor-name">ĐOÀN ĐỨC MINH</h3>
-        <ul>
-          <li>Domestic and international human resource training expert.</li>
-          <li>University lecturer.</li>
-          <li>Management researcher. Team building expert.</li>
-          <li><a href="https://isb.edu.vn/" target="_blank">isb.edu.vn</a></li>
+        <ul class="list-none space-y-2 text-gray-600 text-sm">
+          <li>🌍 International & domestic HR training expert.</li>
+          <li>📖 University lecturer.</li>
+          <li>📊 Management researcher. Team building expert.</li>
+          <li>🔗 <a href="https://isb.edu.vn/" target="_blank" class="text-blue-500 hover:underline">isb.edu.vn</a></li>
+        </ul>
+      </a>
+    </div>
+  </section>
+  
+  
+  
+  <!-- THÊM BAN CHỦ NHIỆM -->
+  <h2 id = "ban-chu-nhiem" class="section-title"><span>Ban</span> Chủ Nhiệm</h2>
+  <div class="board-leader-container">
+
+    <!-- Thành viên 1 -->
+    <div class="board-leader-card">
+      <img src="your-image-path.jpg" alt="Phạm Hoàng Minh Khánh" class="board-leader-img" />
+      <div class="board-leader-info">
+        <h3 class="leader-name">Phạm Hoàng Minh Khánh</h3>
+        <span class="badge">Giám đốc Vận Hành</span>
+        <ul class="leader-description">
+          <li>✔️ Oversees development of training programs for sales teams.</li>
+          <li>📊 Evaluates the effectiveness of training programs.</li>
         </ul>
       </div>
     </div>
-  </section>
-  
-  <!-- THÊM BAN CHỦ NHIỆM -->
-  <section id="#BGH" class="board-leader-section">
-    <h2 class="section-title"><span>Ban</span> Chủ Nhiệm</h2>
-    <div class="board-leader-container">
-  
-      <div class="board-leader-card">
-        <img src="your-image-path.jpg" alt="Phạm Hoàng Minh Khánh" class="board-leader-img">
-        <div class="board-leader-info">
-          <h3>Phạm Hoàng Minh Khánh</h3>
-          <span class="badge">Giám đốc Vận Hành</span>
-          <ul>
-            <li>Oversees development of training programs for new and existing sales team members</li>
-            <li>Evaluates the effectiveness of training programs</li>
-          </ul>
-        </div>
+
+    <!-- Thành viên 2 -->
+    <div class="board-leader-card">
+      <img src="your-image-path.jpg" alt="Dương Thế Khải" class="board-leader-img" />
+      <div class="board-leader-info">
+        <h3 class="leader-name">Dương Thế Khải</h3>
+        <span class="badge">Phó Giám Đốc</span>
+        <ul class="leader-description">
+          <li>🧠 Supports Senior Sales Trainer.</li>
+          <li>🎯 Designs and delivers training programs.</li>
+        </ul>
       </div>
-  
-      <div class="board-leader-card">
-        <img src="your-image-path.jpg" alt="Dương Thế Khải" class="board-leader-img">
-        <div class="board-leader-info">
-          <h3>Dương Thế Khải</h3>
-          <span class="badge">Phó Giám Đốc</span>
-          <ul>
-            <li>Supports Senior Sales Trainer</li>
-            <li>Designs and delivers training programs for new and existing sales team members</li>
-          </ul>
-        </div>
-      </div>
-  
     </div>
-  </section>
-  
+
+  </div>
+</section>
+<!--Liên Hệ-->
+<section id="LH" class="contact-section">
+  <div id="particles-js"></div>
+  <div class="advisor-header">
+    <h2>LIÊN HỆ</h2>
+    <div class="rotating-text-container">
+      <p id="rotating-text" class="rotating-text"></p>
+    </div>
+  </div>
+  <div class="contact-container">
+    <div class="contact-info" data-aos="fade-right">
+      <div class="contact-item">
+        <div class="icon-circle">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="text-info">
+          <h4>Địa chỉ</h4>
+          <p> Việt Nam</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="icon-circle">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <div class="text-info">
+          <h4>Số điện thoại</h4>
+          <p>+84 xxxx xxx</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="icon-circle">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="text-info">
+          <h4>Email</h4>
+          <p>hoichogiaoduc.edu.vn@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <form 
+      class="contact-form" 
+      action="https://formspree.io/f/xanowzge" 
+      method="POST" 
+      data-aos="fade-left"
+    >
+      <div class="input-group">
+        <input type="text" name="name" placeholder="Họ & tên" required />
+        <input type="email" name="email" placeholder="Email" required />
+      </div>
+      <input type="text" name="phone" placeholder="Số điện thoại" required />
+      <textarea name="message" rows="4" placeholder="Thông tin cần tư vấn:" required></textarea>
+      <button type="submit">NHẬN THÔNG TIN TƯ VẤN NGAY!</button>
+    </form>
+  </div>
+  <lottie-player 
+    src="https://assets1.lottiefiles.com/packages/lf20_tno6cg2w.json" 
+    background="transparent" 
+    speed="1" 
+    style="width: 300px; height: 300px; margin: 20px auto; display: block;" 
+    loop 
+    autoplay>
+  </lottie-player>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 50, density: { enable: true, value_area: 800 } },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5, random: true },
+      size: { value: 3, random: true },
+      line_linked: { enable: false },
+      move: { enable: true, speed: 1 }
+    },
+    interactivity: {
+      events: {
+        onhover: { enable: true, mode: "repulse" },
+        onclick: { enable: true, mode: "push" }
+      },
+      modes: {
+        repulse: { distance: 100 },
+        push: { particles_nb: 4 }
+      }
+    }
+  });
+
+  const form = document.querySelector(".contact-form");
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      alert("Cảm ơn bạn! Thông tin đã được gửi thành công.");
+      form.reset();
+    } else {
+      alert("Có lỗi xảy ra. Vui lòng thử lại sau.");
+    }
+  });
+</script>
   
  
 <!-- FOOTER -->
